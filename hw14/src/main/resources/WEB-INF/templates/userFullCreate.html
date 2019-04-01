@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create user</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input:read-only {
+            background: lightgray;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!--/*@thymesVar id="user" type="ru.otus.domain.User"*/-->
+<form id="create-form" th:action="@{/user/save}" th:object="${user}" th:method="post" accept-charset="utf-8">
+    <h1>New User:</h1>
+
+    <div class="row">
+        <!--/*@thymesVar id="user" type="ru.otus.domain.User"*/-->
+        <label for="holder-input-name">Name:</label>
+        <input id="holder-input-name" name="name" type="text" th:value="${user.name}" value="John Doe"/>
+        <label for="holder-input-password">Password:</label>
+        <input id="holder-input-password" name="password" type="text" th:value="${user.password}" value="123"/>
+        <label for="holder-input-age">Age:</label>
+        <input id="holder-input-age" name="age" type="text" th:value="${user.age}" value="123"/>
+        <label for="holder-input-address">Address:</label>
+        <input id="holder-input-address" name="address" type="text" th:value="${user.address}" value="Moscow"/>
+    </div>
+
+    <div class="row">
+        <button type="submit">Save</button>
+    </div>
+</form>
+
+</body>
+</html>

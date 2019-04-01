@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List of all users</title>
+    <style type="text/css">
+        body {
+            padding: 50px;
+        }
+
+        .users, .users td {
+            border: 1px solid lightgray;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Users:</h1>
+
+    <table class="users">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--/*@thymesVar id="users" type="ru.otus.domain.User"*/-->
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">1</td>
+                <td th:text="${user.name}">John Doe</td>
+                <td th:text="${user.password}">John Doe</td>
+                <td th:text="${user.age}">1</td>
+                <!--/*@thymesVar id="address" type="ru.otus.domain.Address"*/-->
+                <td th:text="${user.address.street}">John Doe</td>
+                <td th:text="${user.phones}">
+                    <!--/*@thymesVar id="phone" type="ru.otus.domain.Phone"*/-->
+                    <li th:each="phone : ${user.phones}" th:text="${phone.number}">phone</li>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/user/create}" href="userFullCreate.html">New user</a>
+</body>
+</html>
