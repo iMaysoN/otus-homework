@@ -1,0 +1,52 @@
+-Xms128m -Xmx128m -verbose:gc
+-XX:+UseConcMarkSweepGC
+[24.706s]
+GcStat{name='ParNew', quantity=9, time=0 ms}
+GcStat{name='ConcurrentMarkSweep', quantity=15, time=2 ms}
+
+-Xms512m -Xmx515m -verbose:gc
+-XX:+UseConcMarkSweepGC
+[131.540s]
+GcStat{name='ParNew', quantity=12, time=0 ms}
+GcStat{name='ConcurrentMarkSweep', quantity=28, time=34 ms}
+----------------------
+
+-Xms128m -Xmx128m -verbose:gc
+-XX:+UseG1GC
+[25.272s]
+GcStat{name='G1 Young Generation', quantity=22, time=0 ms}
+GcStat{name='G1 Old Generation', quantity=4, time=0 ms}
+
+-Xms512m -Xmx512m -verbose:gc
+-XX:+UseG1GC
+[106.435s]
+GcStat{name='G1 Young Generation', quantity=44, time=0 ms}
+GcStat{name='G1 Old Generation', quantity=10, time=1 ms}
+----------------------
+
+-Xms128m -Xmx128m -verbose:gc
+-XX:+UseParallelGC
+[103.550s]
+GcStat{name='PS Scavenge', quantity=5, time=0 ms}
+GcStat{name='PS MarkSweep', quantity=6, time=1 ms}
+
+-Xms512m -Xmx512m -verbose:gc
+-XX:+UseParallelGC
+Hi proc load
+[1365.834s]
+GcStat{name='PS Scavenge', quantity=9, time=1 ms}
+GcStat{name='PS MarkSweep', quantity=19, time=9 ms}
+----------------------
+
+-Xms128m -Xmx128m -verbose:gc
+-XX:+UseSerialGC
+[22.762s]
+GcStat{name='Copy', quantity=5, time=0 ms}
+GcStat{name='MarkSweepCompact', quantity=10, time=1 ms}
+
+-Xms512m -Xmx512m -verbose:gc
+-XX:+UseSerialGC
+[109.816s]
+GcStat{name='Copy', quantity=8, time=0 ms}
+GcStat{name='MarkSweepCompact', quantity=12, time=5 ms}
+----------------------
