@@ -1,5 +1,7 @@
 package ru.otus.services.message;
 
+import ru.otus.services.Addressee;
+
 public abstract class Message {
     private final Address from;
     private final Address to;

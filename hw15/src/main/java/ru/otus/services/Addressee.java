@@ -1,6 +1,6 @@
-package ru.otus.services.message;
+package ru.otus.services;
 
-import ru.otus.services.MessageService;
+import ru.otus.services.message.Address;
 
 public interface Addressee {
     Address getAddress();

@@ -1,7 +1,6 @@
 package ru.otus.services;
 
 import ru.otus.entity.User;
-import ru.otus.services.message.Addressee;
 
 import java.util.List;
 

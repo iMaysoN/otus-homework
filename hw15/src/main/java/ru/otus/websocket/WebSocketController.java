@@ -13,7 +13,7 @@ public class WebSocketController {
         this.frontendService = frontendService;
     }
 
-    @MessageMapping({"/connect","/message"})
+    @MessageMapping({"/connect", "/message"})
     @SendTo("/topic/response")
     public void getUsers() {
         frontendService.getUsers();

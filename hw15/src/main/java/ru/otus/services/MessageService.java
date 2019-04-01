@@ -1,6 +1,5 @@
 package ru.otus.services;
 
-import ru.otus.services.message.Addressee;
 import ru.otus.services.message.Message;
 
 public interface MessageService {

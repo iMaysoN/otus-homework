@@ -1,6 +1,7 @@
 package ru.otus.services.message;
 
 import org.springframework.stereotype.Service;
+import ru.otus.services.Addressee;
 import ru.otus.services.MessageService;
 
 import java.util.ArrayList;

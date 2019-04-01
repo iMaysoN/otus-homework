@@ -9,7 +9,7 @@ import java.util.List;
 public class MsgGetUsersAnswer extends MsgToFrontend {
     private final List<User> users;
 
-    public MsgGetUsersAnswer(Address from, Address to, List<User> users) {
+    MsgGetUsersAnswer(Address from, Address to, List<User> users) {
         super(from, to);
         this.users = users;
     }

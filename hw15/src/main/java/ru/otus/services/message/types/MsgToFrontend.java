@@ -1,12 +1,12 @@
 package ru.otus.services.message.types;
 
+import ru.otus.services.Addressee;
 import ru.otus.services.FrontendService;
 import ru.otus.services.message.Address;
-import ru.otus.services.message.Addressee;
 import ru.otus.services.message.Message;
 
 public abstract class MsgToFrontend extends Message {
-    public MsgToFrontend(Address from, Address to) {
+    MsgToFrontend(Address from, Address to) {
         super(from, to);
     }
 

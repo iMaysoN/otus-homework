@@ -15,7 +15,7 @@ public class Address {
         this.id = id;
     }
 
-    public String getId() {
+    String getId() {
         return id;
     }
 
